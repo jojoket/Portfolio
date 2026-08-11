@@ -1,13 +1,15 @@
-﻿html {
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html {
     background-color: #f1f5f9;
-    font-family: sans-serif;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
 }
+
 
 body {
     padding: 10px;
-    margin: 0 19rem;
-    width: 100%;
-    max-width: 80ch;
     line-height: 1.5;
 }
 
@@ -16,6 +18,11 @@ body {
 }
 
 h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+
+h2 {
     margin: 1rem 0;
     font-size: 2.5rem;
 }
@@ -34,18 +41,37 @@ h1 {
     background-color: #F8FCFD;
 }
 
+/* content */
+
+.content {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 0 auto;
+}
+
+.content-footer{
+    text-align: center;
+    line-height: 0.5;
+}
+
 /* Side bar */
+
+.container {
+    position: relative;
+    display: grid;
+    grid-auto-columns: max-content auto;
+}
 
 .side-bar {
     background: #f1f1f1;
-    position:fixed;
+    position:sticky;
     inset-inline-start: 0px;
     top: 0px;
     grid-column-start: 1;
     grid-row-start: 1;
     display: grid;
     width: 19rem;
-    padding: 10px;
+    padding: 100px 10px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-template-rows: repeat(1, minmax(0, 1fr));
     align-items: flex-start;
@@ -53,7 +79,6 @@ h1 {
     overflow-x: hidden;
     overflow-y: hidden;
     overscroll-behavior: contain;
-        height: 100vh;
         height: 100dvh;
 }
 
@@ -64,11 +89,14 @@ h1 {
     border: none;
     color: #fff;
     font-size: 1.2rem;
-    font-weight: bold;
     padding: 5px 10px;
 }
 .menu :hover {
     background-color: #c5c5c5;
+}
+
+.nav-side-bar {
+    width: 100%;
 }
 
 .nav-links {
@@ -87,7 +115,6 @@ h1 {
     padding: 10px 0;
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: bold;
     color: #000000;
 }
 

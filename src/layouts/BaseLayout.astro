@@ -17,10 +17,12 @@ const {
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
-    <body>
+    <div class="container">
         <Header />
-        <slot/>
-        <Footer />
+        <div class="content">
+            <slot />
+            <Footer />
+        </div>
         <script>import "../scripts/menu.js";</script>
-    </body>
+    </div>
 </html>
