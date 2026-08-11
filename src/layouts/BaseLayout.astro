@@ -2,8 +2,11 @@
 import '../styles/global.css';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import {SITE_TITLE} from "../config.ts";
 
-const {pageTitle} = Astro.props;
+const {
+    pageTitle = SITE_TITLE
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -16,7 +19,6 @@ const {pageTitle} = Astro.props;
     </head>
     <body>
         <Header />
-        <h1>{pageTitle}</h1>
         <slot/>
         <Footer />
         <script>import "../scripts/menu.js";</script>

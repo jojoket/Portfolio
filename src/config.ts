@@ -1,0 +1,2 @@
+export const SITE_TITLE = 'Jules Sarton Portfolio';
+export const SITE_DESCRIPTION = 'My portfolio site I developed myself, as a way to learn html, css, js, astro and react. But mainly to present myself, what I do and my hobbies.';
