@@ -1,5 +1,5 @@
 ﻿---
-import '../styles/global.scss';
+import '../global.css';
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import {SITE_TITLE} from "../config.ts";
@@ -13,8 +13,14 @@ const {
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <script defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js">
+            import { Observer } from 'tailwindcss-intersect';
+
+            Observer.start();
+        </script>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <link href="../styles/output.css" rel="stylesheet">
         <title>{pageTitle}</title>
     </head>
     <div class="container">

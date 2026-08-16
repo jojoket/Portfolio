@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind variants;
+
+
+/*
+
+When updating the .css file run this command to update it (needed for tailwindcss) :
+
+    npx tailwindcss -i ./src/styles/input.css -o ./src/styles/global.css --watch
+
+*/
+
+/* Coolors Exported Palette - https://coolors.co/ffa46c-c2d3cd-3a3335-0471a6-061826 */
+/* SCSS HEX */
+:root {
+    --primary: #f7c59fff;
+    --black: #2a324bff;
+    --grey: #767b91ff;
+    --clear: #c7ccdbff;
+    --white: #e1e5eeff;
+    --gradient-right-primary-secondary: linear-gradient(90deg, var(--primary), var(--black));
+    --gradient-right-greyed-secondary: linear-gradient(90deg, var(--black), var(--grey));
+}
+
+/* SCSS Gradient */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    background-color: #f1f5f9;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: var(--black);
+}
+
+body {
+    padding: 0;
+    line-height: 1.5;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+hr.rounded {
+    border: 3px solid var(--primary);
+    border-radius: 5px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+}
+
+
+/* content */
+
+.content {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 0 auto;
+}
+
+.content-footer{
+    text-align: center;
+    line-height: 0.8;
+    color: var(--grey);
+}
+
+/* Side bar */
+
+.container {
+    position: relative;
+    display: grid;
+    grid-auto-columns: max-content auto;
+}
+
+.side-bar {
+    background: var(--black);
+    position:sticky;
+    inset-inline-start: 0px;
+    top: 0px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    display: grid;
+    width: 19rem;
+    padding: 0 10px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    align-items: flex-start;
+    justify-items: start;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overscroll-behavior: contain;
+    height: 100dvh;
+}
+
+/* nav styles */
+
+.menu {
+    background-color: #0d0950;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+.menu :hover {
+    background-color: #c5c5c5;
+}
+
+.nav-side-bar {
+    width: 100%;
+}
+
+.nav-header {
+    pointer-events: all;
+    text-decoration: none;
+    text-align: center;
+}
+.nav-header a {
+    pointer-events: all;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav-links {
+    width: 100%;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+    display: unset;
+}
+
+@media screen and (min-width: 636px) {
+    .nav-links {
+        display: block;
+        position: static;
+        width: 100%;
+        background: none;
+    }
+
+    .nav-links a {
+        display: inline-block;
+    }
+    .menu {
+        display: none;
+    }
+}
