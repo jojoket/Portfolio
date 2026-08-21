@@ -1,7 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind variants;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "tailwindcss/preflight";
 
+@tailwind utilities;
+@plugin "tailwindcss-motion";
 
 /*
 
@@ -25,9 +27,6 @@ When updating the .css file run this command to update it (needed for tailwindcs
 
 /* SCSS Gradient */
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
     background-color: #f1f5f9;

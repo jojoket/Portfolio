@@ -12,19 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^6.0.2",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.0",
-    "preact": "^10.29.8",
-    "tailwindcss-intersect": "^2.2.0"
+    "astro": "^7.2.4",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "sass-embedded": "^1.102.0",
-    "tailwindcss": "^3.4.19",
     "tailwindcss-motion": "^1.1.1"
-  },
-  "allowScripts": {
-    "@parcel/watcher@2.6.0": true,
-    "esbuild@0.28.1": true
   }
 }

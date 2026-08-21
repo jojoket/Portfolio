@@ -1,9 +1,9 @@
-// tailwind.config.js
-
+import tailwindcssMotion from "tailwindcss-motion";
 
 export default {
-  theme: {
-    extend: {},
-  },
-  plugins: [require('tailwindcss-motion')],
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx}'],
+    theme: {
+        extend: {},
+    },
+    plugins: [tailwindcssMotion],
 };
