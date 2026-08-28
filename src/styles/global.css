@@ -169,6 +169,27 @@ hr.rounded {
     color: var(--white);
 }
 
+@keyframes slide-in {
+    from {
+        translate: 2vw 0;
+        opacity: 0;
+    }
+
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
+@keyframes slide-out {
+     from {
+         translate: 0 0;
+     }
+
+     to {
+         translate: 1vw 0;
+     }
+ }
+
 .nav-links a:hover,
 .nav-links a:focus {
     background-color: var(--white);
