@@ -1,8 +1,9 @@
 ﻿---
 import '../styles/global.css';
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import {SITE_TITLE} from "../config.ts";
+import SideBar from "../components/SideBar.astro";
+import Header from "../components/Header.astro";
 
 const {
     pageTitle = SITE_TITLE
@@ -19,7 +20,8 @@ const {
         <title>{pageTitle}</title>
     </head>
     <div class="container">
-        <Header />
+        <Header/>
+        <SideBar/>
         <div class="content">
             <slot />
             <Footer />

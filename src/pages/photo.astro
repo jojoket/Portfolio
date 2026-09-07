@@ -5,11 +5,6 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 const pageTitle = "Blog page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <h1>BLOG ! </h1>
+    <h1>Photos  </h1>
 
-    <p>But I'll try to update it as much as I can</p>
-    <p>Here's the first blog entry (still in the context of the tutorial)</p>
-    <ul>
-        {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
-    </ul>
 </BaseLayout>

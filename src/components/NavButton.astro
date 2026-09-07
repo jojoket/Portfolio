@@ -1,5 +1,13 @@
 ---
+const {link, logoName="home"} = Astro.props;
 
-const {link} = Astro.props;
+const { default: innerHTML } = await import(`/src/svg/${logoName}.svg?raw`);
+const pathname = Astro.url.pathname;
 ---
-<li><a class="navButtons" href={link}><slot/></a></li>
+
+<div class:list={['nav-button', {'nav-button-active':pathname===link}]}>
+    <a class="nav-button-child" href={link}>
+        <Fragment class="nav-button-child" set:html={innerHTML} />
+        <slot/>
+    </a>
+</div>
