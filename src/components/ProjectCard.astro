@@ -1,0 +1,9 @@
+﻿---
+const {url, title, desc, imageSrc} = Astro.props;
+---
+
+<a href={url} class="project-card" style={`--background-imagesrc: url("${imageSrc}");`}>
+    <div class="project-card-img"/>
+    <h3>{title}</h3>
+    <p>{desc}</p>
+</a>

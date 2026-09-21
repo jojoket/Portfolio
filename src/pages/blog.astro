@@ -9,7 +9,7 @@ const pageTitle = "Blog page";
 
     <p>But I'll try to update it as much as I can</p>
     <p>Here's the first blog entry (still in the context of the tutorial)</p>
-    <ul>
+    <div>
         {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
-    </ul>
+    </div>
 </BaseLayout>

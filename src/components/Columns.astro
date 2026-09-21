@@ -1,0 +1,15 @@
+﻿---
+
+export interface Content{
+    contents: Array<string>;
+}
+
+const {contents} = Astro.props as Content;
+
+---
+<div style="margin:0px auto; width: 70%">
+    {contents.map((content)=>(
+        <div style={{float:"left", margin:0, width:`${100/contents.length}%`,}}>{content}</div>
+    ))}
+    <br/>
+</div>
