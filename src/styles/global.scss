@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*
@@ -11,56 +13,26 @@ When updating the .css file run this command to update it (needed for tailwindcs
 /* Coolors Exported Palette - https://coolors.co/ffa46c-c2d3cd-3a3335-0471a6-061826 */
 /* SCSS HEX */
 :root {
-    --primary: #f6974e;
-    --black: black;
-    --grey: #6c6c6c;
-    --clear: white;
-    --white: white;
-
-    --back: var(--black);
-    --foreground: #1e1e1e;
-    --font-color: var(--white);
-    --font-color-unfocused: #737373;
-    --gradient-right-primary-secondary: linear-gradient(45deg, var(--primary), transparent 100%);
-    --gradient-right-greyed-secondary: linear-gradient(90deg, var(--black), var(--grey));
+    --primary-color: #0b5dd5;
 }
 
 /* SCSS Gradient */
 
 
 html {
-    background-color: var(--back);
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    color: var(--font-color);
+    //background-color: var(--back);
+    //font-family: "Raleway", sans-serif;
+    //font-weight: 500;
+    //color: var(--font-color);
 }
 
 body {
-    padding: 0;
-    line-height: 1.5;
-    margin: 0;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-h1 {
-    margin: 1rem 0;
-    font-size: 3rem;
-    font-weight: 800;
-}
-
-h2 {
-    margin: 1rem 0;
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-h3 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-    font-weight: 500;
+.main-container {
+    position: relative;
+    display: grid;
+    grid-auto-columns: max-content auto;
 }
 
 hr.rounded {
@@ -82,13 +54,6 @@ hr.rounded {
     background-color: #F8FCFD;
 }
 
-.container {
-    position: relative;
-    display: grid;
-    grid-auto-columns: max-content auto;
-    background: var(--back);
-}
-
 .main-head {
     grid-column: 1/3;
     grid-row-start: 1;
@@ -98,9 +63,9 @@ hr.rounded {
     border-bottom-radius: 5px;
     background: var(--back);
 }
-.logo {
+.navbar-brand img {
     border-radius: 10px;
-    height: 100%;
+    margin: 0 5px;
 }
 
 /* content */
@@ -128,45 +93,62 @@ hr.rounded {
 }
 
 .welcome{
-    width: 50%;
+}
+
+.welcome h1{
+    --bs-heading-color: var(--bs-emphasis-color);
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    font-size: 4rem;
+    margin-bottom: 1rem !important;
+}
+
+.welcome p{
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--bs-secondary-color);
+    margin-bottom: 1.5rem !important;
+}
+
+.welcome a{
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem !important;
+    padding: .8125rem 2rem;
 }
 
 .profile-container{
-    width: 20%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem !important;
     transition: 0.25s;
 }
 
-.profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: var(--foreground);
-    border-radius: 10px;
-    padding: 1rem 1rem;
-    position: relative;
-}
 .profile-container:hover{
     transform: translateY(-5px) scale(1.01);
 }
 
-.profile::after{
-    content:'';
-    position: absolute;
-    background: conic-gradient(var(--foreground), var(--primary), var(--foreground));
-    filter: blur(1rem);
-    border-radius: inherit;
-    inset: -2px;
-    z-index: -1;
-}
-
-.profile img{
-    border-radius: 10px;
-    width: 100%;
+.profile-picture,
+.profile-picture img{
+    position: relative;
+    width: 200px;
+    border-radius: 20px;
     aspect-ratio: 1;
     object-fit: cover;
 }
+
+.profile-picture::after{
+    content:'';
+    position: absolute;
+    background: conic-gradient(transparent 10%, var(--primary-color), transparent 90%);
+    filter: blur(1rem);
+    border-radius: inherit;
+    inset: -7px;
+    z-index: -1;
+}
+
+
 
 /* Project page */
 
@@ -248,25 +230,13 @@ hr.rounded {
 /* Side bar */
 
 .side-bar {
-    background: var(--back);
-    position:sticky;
+    position: sticky;
     inset-inline-start: 0;
-    top: 0;
     grid-column-start: 1;
     grid-row-start: 2;
-    display: grid;
-    width: 19rem;
-    padding: 0 10px;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-    align-items: flex-start;
-    justify-items: start;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    overscroll-behavior: contain;
+    top: 0;
     height: 100dvh;
-    border-right: 1px solid var(--grey);
-    border-right-radius: 5px;
+    width: 280px;
 }
 
 /* nav styles */
@@ -282,46 +252,16 @@ hr.rounded {
     background-color: #c5c5c5;
 }
 
-.nav-links {
-    width: 100%;
-    margin: 10px 0;
-}
-
-
-.nav-button {
-    margin: 0.5em 0;
-}
-
-.nav-button-active{
-    border-left: 2px solid var(--primary);
-}
-.nav-button-active .nav-button-child{
-    color:var(--font-color);
-    fill:var(--primary);
-    transform: translate(0.2em);
-}
-
-.nav-button a {
-    border-radius: 5px;
-    width: 100%;
-    text-align: left;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.1s;
-}
-
-.nav-button svg{
+.nav-link svg{
     alignment-baseline: central;
-    width: 7.5%;
+    width: 10%;
     margin: 0 0.5em 0 0;
+    fill: currentColor;
 }
 
-.nav-button-child { color:var(--font-color-unfocused); fill:var(--font-color-unfocused); }
-.nav-button:hover .nav-button-child
-{
-    color:var(--font-color);
-    fill:var(--font-color);
-    transform: translate(0.2em);
+.nav-link:hover{
+    color: var(--bs-emphasis-color);
+    background-color: var(--bs-secondary-bg);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -329,16 +269,6 @@ hr.rounded {
 }
 
 @media screen and (min-width: 636px) {
-    .nav-links {
-        display: block;
-        position: static;
-        width: 100%;
-        background: none;
-    }
-
-    .nav-links a {
-        display: inline-block;
-    }
     .menu {
         display: none;
     }

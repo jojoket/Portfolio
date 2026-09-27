@@ -5,9 +5,9 @@ const { default: innerHTML } = await import(`/src/svg/${logoName}.svg?raw`);
 const pathname = Astro.url.pathname;
 ---
 
-<div class:list={['nav-button', {'nav-button-active':pathname===link}]}>
-    <a class="nav-button-child" href={link}>
-        <Fragment class="nav-button-child" set:html={innerHTML} />
+<div class="nav-item">
+    <a class:list={['nav-link', {'active':pathname===link}]} href={link}>
+        <Fragment class="bi pe-none me-2" width="16" height="16" set:html={innerHTML} />
         <slot/>
     </a>
 </div>

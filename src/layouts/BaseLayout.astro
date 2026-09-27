@@ -1,5 +1,5 @@
 ﻿---
-import '../styles/global.css';
+import '../styles/global.scss';
 import Footer from "../components/Footer.astro";
 import {SITE_TITLE} from "../config.ts";
 import SideBar from "../components/SideBar.astro";
@@ -10,25 +10,25 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link href="../styles/global.css" rel="stylesheet">
+        <link href="../styles/global.scss" rel="stylesheet">
         <title>{pageTitle}</title>
     </head>
-    <div class="container">
-        <Header/>
+    <Header/>
+    <div class="main-container">
         <SideBar/>
         <div class="content">
             <slot />
             <Footer />
         </div>
-        <script>
-            import "../scripts/menu.js";
-            import "../scripts/navigationButton.js";
-        </script>
     </div>
+    <script>
+        import "../scripts/menu.js";
+        import "../scripts/navigationButton.js";
+    </script>
 </html>

@@ -15,10 +15,12 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
     "autoprefixer": "^10.5.4",
+    "bootstrap": "^5.3.8",
     "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "sass-embedded": "^1.104.1",
     "tailwindcss-motion": "^1.1.1"
   }
 }

@@ -9,17 +9,15 @@ const pageTitle = "Home Page";
 const lastProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<div class="home-page">
-		<Welcome />
-		<Profile />
-		<div>
-			<h2> Check out my last projects !</h2>
-			<div class="project-grid">
-				{lastProjects.slice(0,2).map((project:any) => <ProjectCard url={project.url}
-																title={project.frontmatter.title}
-																desc={project.frontmatter.description}
-																imageSrc={project.frontmatter.image.url}/>)}
-			</div>
+	<Welcome />
+	
+	<div>
+		<h2> Check out my last projects</h2>
+		<div class="project-grid">
+			{lastProjects.slice(0,2).map((project:any) => <ProjectCard url={project.url}
+																	   title={project.frontmatter.title}
+																	   desc={project.frontmatter.description}
+																	   imageSrc={project.frontmatter.image.url}/>)}
 		</div>
 	</div>
 </BaseLayout>
