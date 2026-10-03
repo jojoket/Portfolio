@@ -68,12 +68,17 @@ hr.rounded {
     margin: 0 5px;
 }
 
+.social svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
 /* content */
 
 .content {
     grid-column-start: 2;
     grid-row-start: 2;
-    margin: 1rem 2rem;
 }
 
 .content-footer{
@@ -121,7 +126,7 @@ hr.rounded {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5rem !important;
+    margin: 1.5rem !important;
     transition: 0.25s;
 }
 
@@ -153,78 +158,79 @@ hr.rounded {
 /* Project page */
 
 .project-grid{
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 15px;
-    grid-auto-rows: minmax(100px, auto);
-    position: relative;
-    z-index: 0;
+    //display: flex;
+    //flex-wrap: wrap;
+    //grid-template-columns: repeat(2,1fr);
+    //grid-gap: 15px;
+    //grid-auto-rows: minmax(100px, auto);
+    //position: relative;
+    //z-index: 0;
 }
 
 .project-card{
-    --background-imagesrc: none;
-    width: 25rem;
-    border-radius: 10px;
-    padding: 0.5rem;
-    text-decoration: none;
-    color: var(--white);
-    background: var(--foreground);
-    position: relative;
-    transition: 1s;
+    //--background-imagesrc: none;
+    //width: 25rem;
+    //border-radius: 10px;
+    //padding: 0.5rem;
+    //text-decoration: none;
+    //color: var(--white);
+    //background: var(--foreground);
+    //position: relative;
+    //transition: 1s;
 }
+//
+//.project-card-img{
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 100%;
+//    background-image: var(--background-imagesrc);
+//    border-radius: inherit;
+//    opacity: 0;
+//    z-index: 0;
+//    object-fit: cover;
+//    transition: 1s;
+//}
+//
+//@property --project-card-start-gradient {
+//    syntax: '<percentage>';
+//    inherits: false;
+//    initial-value: 45%;
+//}
+//@property --project-card-end-gradient {
+//    syntax: '<percentage>';
+//    inherits: false;
+//    initial-value: 55%;
+//}
+//
+//.project-card::after{
+//    content:'';
+//    position: absolute;
+//    --project-card-start-gradient: 45%;
+//    --project-card-end-gradient: 55%;
+//    background: conic-gradient(from 70deg,transparent var(--project-card-start-gradient), var(--primary), transparent var(--project-card-end-gradient));
+//    border-radius: inherit;
+//    inset: -2px;
+//    z-index: -1;
+//    transition:
+//            --project-card-start-gradient 1s ease,
+//            --project-card-end-gradient 1s ease;
+//}
+//
+//.project-card:hover::after{
+//    --project-card-start-gradient: 5%;
+//    --project-card-end-gradient: 95%;
+//}
+//.project-card:hover .project-card-img{
+//    opacity: 1;
+//}
 
-.project-card h3,
-.project-card p{
-    position: relative;
-    z-index: 1;
-}
+// Blog card
 
-.project-card-img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: var(--background-imagesrc);
-    border-radius: inherit;
-    opacity: 0;
-    z-index: 0;
+.blog-card img{
+    width: 30%;
     object-fit: cover;
-    transition: 1s;
-}
-
-@property --project-card-start-gradient {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 45%;
-}
-@property --project-card-end-gradient {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 55%;
-}
-
-.project-card::after{
-    content:'';
-    position: absolute;
-    --project-card-start-gradient: 45%;
-    --project-card-end-gradient: 55%;
-    background: conic-gradient(from 70deg,transparent var(--project-card-start-gradient), var(--primary), transparent var(--project-card-end-gradient));
-    border-radius: inherit;
-    inset: -2px;
-    z-index: -1;
-    transition:
-            --project-card-start-gradient 1s ease,
-            --project-card-end-gradient 1s ease;
-}
-
-.project-card:hover::after{
-    --project-card-start-gradient: 5%;
-    --project-card-end-gradient: 95%;
-}
-.project-card:hover .project-card-img{
-    opacity: 1;
 }
 
 /* Side bar */
@@ -235,7 +241,8 @@ hr.rounded {
     grid-column-start: 1;
     grid-row-start: 2;
     top: 0;
-    height: 100dvh;
+    height: 100%;
+    min-height: 1000px;
     width: 280px;
 }
 

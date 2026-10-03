@@ -1,15 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import BlogCard from "../components/BlogCard.astro";
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = "Blog page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <h1>BLOG ! </h1>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Dev blog</h1>
+                <p class="lead text-body-secondary">Here are all my dev blog posts. When I learn dev related things, I'll put it here as a reminder. I hope it'll help organize my work better.</p>
+            </div>
+        </div>
+    </section>
 
-    <p>But I'll try to update it as much as I can</p>
-    <p>Here's the first blog entry (still in the context of the tutorial)</p>
-    <div>
-        {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {allPosts.map((post:any) => <BlogCard url={post.url}
+                                                      title={post.frontmatter.title}
+                                                      desc={post.frontmatter.description}
+                                                      imageSrc={post.frontmatter.image.url}/>)}
+            </div>
+        </div>
     </div>
 </BaseLayout>

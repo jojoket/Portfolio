@@ -1,0 +1,24 @@
+﻿---
+const {url, title, desc, imageSrc} = Astro.props;
+---
+
+<div class="blog-card col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis"> tag</strong>
+            <h5 class="mb-0">{title}</h5>
+            <div class="mb-1 text-body-secondary">date</div>
+            <p class="card-text mb-md-3">{desc}</p>
+            <a href={url} class="icon-link gap-1 icon-link-hover stretched-link">
+                Read
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#chevron-right">
+                        <symbol id="chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path> </symbol>
+                    </use>
+                </svg>
+
+            </a>
+        </div>
+        <img src={imageSrc} class="col-auto d-none d-lg-block" alt="...">
+    </div>
+</div>

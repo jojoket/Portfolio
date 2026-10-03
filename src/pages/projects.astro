@@ -5,14 +5,24 @@ const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: t
 const pageTitle = "Blog page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <h1>My projects</h1>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">My projects</h1>
+                <p class="lead text-body-secondary">My professional, personal and study projects. Feel free to check them out, each have a dedicated page.</p>
+            </div>
+        </div>
+    </section>
 
-    <p>My professional, personal and studies projects :</p>
 
-    <div class="project-grid">
-        {allProjects.map((project:any) => <ProjectCard url={project.url}
-                                                       title={project.frontmatter.title}
-                                                       desc={project.frontmatter.description}
-                                                       imageSrc={project.frontmatter.image.url}/>)}
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="project-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {allProjects.map((project:any) => <ProjectCard url={project.url}
+                                                               title={project.frontmatter.title}
+                                                               desc={project.frontmatter.description}
+                                                               imageSrc={project.frontmatter.image.url}/>)}
+            </div>
+        </div>
     </div>
 </BaseLayout>

@@ -1,13 +1,10 @@
 ﻿---
-const { platform, username } = Astro.props;
+const { platform, link } = Astro.props;
+const { default: innerHTML } = await import(`/src/svg/${platform}.svg?raw`);
 ---
-<style>
-    a {
-        padding: 0.5rem 1rem;
-        color: white;
-        background-color: #4c1d95;
-        text-decoration: none;
-    }
-</style>
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<div class="social ms-3 me-3">
+    <a class="text-body-secondary" target="_blank"  href={link} aria-label={platform}>
+        <Fragment class="bi pe-none me-2" set:html={innerHTML} />
+    </a>
+</div>

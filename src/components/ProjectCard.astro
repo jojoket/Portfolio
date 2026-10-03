@@ -2,8 +2,13 @@
 const {url, title, desc, imageSrc} = Astro.props;
 ---
 
-<a href={url} class="project-card" style={`--background-imagesrc: url("${imageSrc}");`}>
-    <div class="project-card-img"/>
-    <h3>{title}</h3>
-    <p>{desc}</p>
-</a>
+<div class="col">
+    <div class="project-card card shadow-sm">
+        <img src={imageSrc} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{title}</h5>
+            <p class="card-text">{desc}</p>
+            <a href={url} class="btn btn-primary">Check project</a>
+        </div>
+    </div>
+</div>

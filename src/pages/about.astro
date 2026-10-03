@@ -1,24 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Skill from "../components/Skill.astro";
 
 const pageTitle = "About Me";
 
 ---
 <BaseLayout pageTitle = {pageTitle}>
-    <h1>A propos de moi</h1>
-
-    <p>Je suis Jules Sarton du Jonchay, programmeur gameplay et outils.<br/>
-        Je suis diplômé du master audiovisuel, médias interactifs numériques et jeux, parcours programmation.<br/>
-
-        Bien que spécialisé en gameplay et tool, j'aime découvrir et apprendre d'autres spécialités. Je m'intéresse à l'ensemble des métiers du jeux vidéo et j'aime particulièrement le travail en équipe, l'échange d'idées et la collaboration avec les différents corps de métier.<br/>
-        J'apprécie réfléchir à l'amélioration du workflow des designers avec qui je travail. Ainsi j'ai été amené à développer des outils d'événements logiques, de rigs et rails de camera, ou de debugs en jeu.<br/>
-
-        Durant mes experiences professionnelles, j'ai travaillé sur des projets VR sur Unity utilisant hand tracking et contrôleurs. J'ai également intégré des projets déjà en production ce qui m'a permis de développer une capacité d'adaptation dans des contextes aux contraintes de temps importantes.<br/>
-        J'ai aussi eu l'opportunité de prendre en charge l'ensemble de la programmation de certains projets. Ce qui m'a conduit à développer et gérer un large éventail de systêmes : Gameplay, UI (Hud, Menus), AI, Tools, Inté VFX et animations, loading async. etc...<br/>
-
-        J'ai beaucoup travaillé sur les moteurs Unreal et Unity en C++ et C# et je suis à l'aise avec les deux.<br/>
-
-        Curieux et impliqué, j'ai soif d'apprendre et d'enrichir mes compétences !<br/>
-
-        Mon lien Portfolio en ligne : https://www.behance.net/julessarton - https://github.com/jojoket - https://julessarton.itch.io/</p>
+    <div class="container text-bg-dark">
+        <div class="row">
+            <div class="col-lg-6 mt-5 h-100 p-3 mx-auto flex-column text-center align-content-center">
+                <div class="px-3">
+                    <h1>About me</h1>
+                    <p class="lead text-start">
+                        I'm Jules Sarton du Jonchay, gameplay and tool programmer.<br/>
+                        I have a programmer master's degree at CNAM Enjmin. <br/>
+                        Even if my main focus is gameplay programmer. One of the things I prefer is to ease the work experience of my designer colleagues by making them tools that simplify their work routine.<br/>
+                        Of course I love to learn and experiment. Be it Game Feel, UI, AI behaviours, Tools, Camera, Prototyping and Game Juice.<br/>
+                        Feel free to check my projects !
+                    </p>
+                    <a class="btn btn-primary fw-normal fs-2 mb-1 px-3" href="/projects/">My Projects</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex flex-wrap justify-content-center align-items-center">
+                <Skill SkillName="C++" ImgSrc="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original"/>
+                <Skill SkillName="C#" ImgSrc="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/330px-Logo_C_sharp.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail"/>
+                <Skill SkillName="Unreal 5" ImgSrc="https://media.ffycdn.net/us/epicgames/CXEA7RjJFH9LupLn8Yai.png?width=2400"/>
+                <Skill SkillName="Unity" ImgSrc="https://cdn.brandfetch.io/idEc0EPR9J/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"/>
+                <Skill SkillName="Godot" ImgSrc="https://godotengine.org/assets/press/icon_color.png"/>
+                <Skill SkillName="Html" ImgSrc="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/960px-HTML5_logo_and_wordmark.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail"/>
+            </div>
+        </div>
+    </div>
 </BaseLayout>
