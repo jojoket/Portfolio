@@ -1,24 +1,31 @@
 ﻿---
-const {url, title, desc, imageSrc} = Astro.props;
+import Tag from "./Tag.astro";
+const {url, frontmatter} = Astro.props;
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+});
 ---
 
 <div class="blog-card col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis"> tag</strong>
-            <h5 class="mb-0">{title}</h5>
-            <div class="mb-1 text-body-secondary">date</div>
-            <p class="card-text mb-md-3">{desc}</p>
-            <a href={url} class="icon-link gap-1 icon-link-hover stretched-link">
+            <div class="tags">
+                {frontmatter.tags.map((tag:string) => <Tag tag={tag}></Tag>)}
+            </div>
+            <h5 class="mb-0">{frontmatter.title}</h5>
+            <p class="blog-post-meta">{formattedDate}</p>
+            <p class="card-text mb-md-3">{frontmatter.description}</p>
+            <a href={url} class="icon-link gap-1 icon-link-hover">
                 Read
-                <svg class="bi" aria-hidden="true">
+                <svg class="bi" aria-hidden="true" height="10px" width="10px">
                     <use xlink:href="#chevron-right">
                         <symbol id="chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path> </symbol>
                     </use>
                 </svg>
-
             </a>
         </div>
-        <img src={imageSrc} class="col-auto d-none d-lg-block" alt="...">
+        <img src={frontmatter.image.url} class="col-auto d-none d-lg-block" alt="...">
     </div>
 </div>

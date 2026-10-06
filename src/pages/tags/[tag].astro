@@ -1,6 +1,8 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogCard from "../../components/BlogCard.js";
+import BlogCard from "../../components/BlogCard.astro";
+import AllTags from "../../components/AllTags.astro";
+import BlogPostsList from "../../components/BlogPostsList.astro";
 
 export async function getStaticPaths() {
     const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
@@ -18,8 +20,13 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
-    <ul>
-        {posts.map((post: any) => <BlogCard url={post.url} title={post.frontmatter.title}/>)}
-    </ul>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">{tag} posts</h1>
+            </div>
+        </div>
+    </section>
+
+    <BlogPostsList>{posts.map((post:any) => <BlogCard frontmatter={post.frontmatter}/>)}</BlogPostsList>
 </BaseLayout>

@@ -1,0 +1,13 @@
+﻿---
+
+const {header} = Astro.props;
+---
+
+<a class="nav-link" href={'#'+header.slug}>
+    {header.text}
+</a>
+{header.subheadings.length > 0 && (
+    <nav class="nav nav-pills flex-column ms-3">
+        {header.subheadings.map((subheading:any)=><Astro.self header={subheading}/>)}
+    </nav>
+)}

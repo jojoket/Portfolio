@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
+import BlogPostsList from "../components/BlogPostsList.astro";
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = "Blog page";
 ---
@@ -15,14 +16,5 @@ const pageTitle = "Blog page";
     </section>
 
 
-    <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {allPosts.map((post:any) => <BlogCard url={post.url}
-                                                      title={post.frontmatter.title}
-                                                      desc={post.frontmatter.description}
-                                                      imageSrc={post.frontmatter.image.url}/>)}
-            </div>
-        </div>
-    </div>
+    <BlogPostsList>{allPosts.map((post:any) => <BlogCard url={post.url} frontmatter={post.frontmatter}/>)}</BlogPostsList>
 </BaseLayout>

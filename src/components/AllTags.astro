@@ -5,6 +5,9 @@ const allPosts = Object.values(import.meta.glob('../pages/posts/*.md', { eager: 
 const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 
 ---
-<div class="tags">
-    {uniqueTags.map((tag: any) => <Tag tag = {tag}/>)}
+<div>
+    <h4 class="fst-italic">All tags</h4>
+    <ul class="list-unstyled mb-0">
+        {uniqueTags.map((tag: any) => <li><Tag tag = {tag}/></li>)}
+    </ul>
 </div>

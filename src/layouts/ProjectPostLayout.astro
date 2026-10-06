@@ -1,0 +1,75 @@
+﻿---
+import BaseLayout from "./BaseLayout.astro";
+import Tag from "../components/Tag.astro";
+import PostRecent from "../components/PostRecent.astro";
+import ScrollSpy from "../components/ScrollSpy.astro";
+const { headings, frontmatter} = Astro.props;
+const toc = buildHierarchy(headings);
+const lastProjects = Object.values(import.meta.glob('/src/pages/projects/*.md', { eager: true }));
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+});
+
+function buildHierarchy(headings: any)
+{
+    const toc: any[] = [];
+    const parentHeadings = new Map();
+
+    if (!headings)
+        return toc;
+
+    headings.forEach((h: any) => {
+        const heading = { ...h, subheadings: [] };
+        parentHeadings.set(heading.depth, heading);
+        // Change 2 to 1 if your markdown includes your <h1>
+        if (heading.depth === 2) {
+            toc.push(heading);
+        } else {
+            parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+        }
+    });
+    return toc;
+}
+---
+<BaseLayout pageTitle={frontmatter.title}>
+    <div class="container">
+        <img class="blog-image rounded" src={frontmatter.image.url} alt={frontmatter.image.alt}/>
+
+        <div class="row g-5">
+            <div class="col-md-9">
+                <h2 class="display-5 link-body-emphasis mb-1">{frontmatter.title}</h2>
+                <p class="blog-post-meta">{formattedDate}</p>
+                <p>{frontmatter.description}</p>
+                <hr>
+
+                <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+                    <slot />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="position-sticky mt-4" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">Content</h4>
+                        <nav id="navbar">
+                            <nav class="nav nav-pills flex-column">
+                                {toc.map((heading)=><ScrollSpy header={heading}/>)}
+                            </nav>
+                        </nav>
+                    </div>
+                    <div>
+                        <h4 class="fst-italic">Recent projects</h4>
+                        <ul class="list-unstyled">
+                            {lastProjects.slice(0,3).map((post:any) => <PostRecent url={post.url}
+                                                                                   title={post.frontmatter.title}
+                                                                                   pubDate={post.frontmatter.pubDate}
+                                                                                   image={post.frontmatter.image.url}/>)}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</BaseLayout>

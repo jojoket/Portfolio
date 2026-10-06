@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/ProjectPostLayout.astro
 title: 'Le flux des Décanautes'
 pubDate: 2024-05-01
 description: 'Project made in 3 months in the first year of Cnam Enjmin`s Master`s decree'

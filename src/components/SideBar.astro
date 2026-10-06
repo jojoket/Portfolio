@@ -4,7 +4,9 @@ import Menu from "./Menu.astro";
 
 ---
 
-<nav class="side-bar d-flex flex-column flex-shrink-0 p-3 text-bg-dark border-end border-body">
-        <Menu/>
-        <Navigation/>
-</nav>
+
+<div class="sidebar border-end col-md-3 col-lg-2 p-2 bg-body-tertiary">
+        <div id="sidebarMenu" class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+                <Navigation/>
+        </div>
+</div>

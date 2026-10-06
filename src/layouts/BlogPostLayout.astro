@@ -1,0 +1,49 @@
+﻿---
+import BaseLayout from "./BaseLayout.astro";
+import Tag from "../components/Tag.astro";
+import PostRecent from "../components/PostRecent.astro";
+import AllTags from "../components/AllTags.astro";
+const { frontmatter } = Astro.props;
+const lastPosts = Object.values(import.meta.glob('/src/pages/posts/*.md', { eager: true }));
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+});
+---
+<BaseLayout pageTitle={frontmatter.title}>
+    <div class="container">
+        <img class="blog-image rounded" src={frontmatter.image.url} alt={frontmatter.image.alt}/>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <div class="tags">
+                    {frontmatter.tags.map((tag:string) => <Tag tag={tag}></Tag>)}
+                </div>
+                <h2 class="display-5 link-body-emphasis mb-1">{frontmatter.title}</h2>
+                <p class="blog-post-meta">{formattedDate}</p>
+                <p>{frontmatter.description}</p>
+                <hr>
+                <slot />
+            </div>
+            <div class="col-md-4">
+                <div class="position-sticky mt-4" style="top: 2rem;">
+                    <!--<div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">About</h4>
+                    </div>-->
+                    <div>
+                        <h4 class="fst-italic">Recent posts</h4>
+                        <ul class="list-unstyled">
+                            {lastPosts.slice(0,3).map((post:any) => <PostRecent url={post.url}
+                                                                                title={post.frontmatter.title}
+                                                                                pubDate={post.frontmatter.pubDate}
+                                                                                image={post.frontmatter.image.url}/>)}
+                        </ul>
+                    </div>
+                    <AllTags/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</BaseLayout>

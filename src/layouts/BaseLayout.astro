@@ -19,10 +19,12 @@ const {
         <link href="../styles/global.scss" rel="stylesheet">
         <title>{pageTitle}</title>
     </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     <Header/>
-    <div class="main-container">
+    <div class="row">
         <SideBar/>
-        <div class="content">
+        <div class="col-md-9 ms-sm-auto col-lg-10 ps-0">
             <slot />
         </div>
     </div>

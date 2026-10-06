@@ -233,17 +233,31 @@ hr.rounded {
     object-fit: cover;
 }
 
+.blog-image{
+    width: 100%;
+    max-height: 256px;
+    object-fit: cover;
+}
+.blog-recent img {
+    aspect-ratio: 2/1.8;
+    object-fit: cover;
+    height: 96px;
+}
+
+.blog-post-meta{
+    margin-bottom: 1rem;
+    color: #727272;
+}
+
 /* Side bar */
 
-.side-bar {
-    position: sticky;
-    inset-inline-start: 0;
-    grid-column-start: 1;
-    grid-row-start: 2;
-    top: 0;
-    height: 100%;
-    min-height: 1000px;
-    width: 280px;
+@media (min-width: 992px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100%;
+        min-height: 1000px;
+    }
 }
 
 /* nav styles */
