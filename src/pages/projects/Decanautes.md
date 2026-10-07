@@ -5,21 +5,25 @@ pubDate: 2024-05-01
 description: 'Project made in 3 months in the first year of Cnam Enjmin`s Master`s decree'
 author: 'Jules Sarton'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+    url: 'https://img.itch.zone/aW1nLzE2NjcwNjk2LnBuZw==/original/Gi9ZMU.png'
+    alt: 'Le flux des decanautes'
 ---
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+"Le Flux des Décanautes" is an asynchronous cooperative experience, between the game and the social media.
 
-## What I've accomplished
+## About
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+You'll take care of a ever travelling vehicle for 10 minutes, by repairing its broken components, and leaving sticky notes on the wall to leave a message for people who will play after you.
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+This project was made in 3 months by a team of 7 people during the year 2023-2024 at the CNAM-ENJMIN.
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+This .exe is only the half of an experience, the other is made by you, by posting helpful comments, your thought, or a love message, or anything else.
 
-## What's next
+<iframe width="560" height="315" src="https://www.youtube.com/embed/28lAo2AQPbE?si=mr0s62Dn61Js6r_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+<div class="flex-row g-1">
+    <img width="45%" style="object-fit: cover" src="https://img.itch.zone/aW1hZ2UvMjYxMTY1MS8xNjY1Nzk5Ny5qcGc=/original/7wV2EE.jpg">
+    <img width="45%" style="object-fit: cover" src="https://img.itch.zone/aW1hZ2UvMjYxMTY1MS8xNjY1Nzk5OS5qcGc=/original/nsU11r.jpg">
+    <img width="45%" style="object-fit: cover" src="https://img.itch.zone/aW1hZ2UvMjYxMTY1MS8xNjY1ODAwMS5qcGc=/original/W4bboa.jpg">
+    <img width="45%" style="object-fit: cover" src="https://img.itch.zone/aW1hZ2UvMjYxMTY1MS8xNjY2NzkwOS5wbmc=/original/vRBquV.png">
+</div>

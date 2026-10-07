@@ -5,7 +5,7 @@ pubDate: 2024-05-01
 description: 'Project made in 3 months in the first year of Cnam Enjmin`s Master`s decree'
 author: 'Jules Sarton'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
+    url: 'https://media.licdn.com/dms/image/v2/D4E3DAQGkOQOKRcPkqw/image-scale_191_1128/image-scale_191_1128/0/1699006702191/wildblood_studio_cover?e=2147483647&v=beta&t=U4MdNofVbokgPexDxe-_6r4AwMS5XE4pwkEGEb3lllc'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---

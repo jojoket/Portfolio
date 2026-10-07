@@ -4,7 +4,7 @@ const {url, title, desc, imageSrc} = Astro.props;
 
 <div class="col">
     <div class="project-card card shadow-sm">
-        <img src={imageSrc} class="card-img-top" alt="...">
+        <img src={imageSrc} class="card-img-top" style="object-fit: cover; min-height: 200px" alt="...">
         <div class="card-body">
             <h5 class="card-title">{title}</h5>
             <p class="card-text">{desc}</p>
