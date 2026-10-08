@@ -17,6 +17,7 @@
     "autoprefixer": "^10.5.4",
     "bootstrap": "^5.3.8",
     "postcss": "^8.5.26",
+    "scss": "^0.2.4",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {

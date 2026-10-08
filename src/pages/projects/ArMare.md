@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ProjectPostLayout.astro
 title: 'ArMare'
-pubDate: 2024-05-01
+pubDate: 2025-02-14
 description: 'Project made in 3 months in the second year of Cnam Enjmin`s Master`s decree'
 author: 'Jules Sarton'
 image:
@@ -31,3 +31,10 @@ This build contains 2 days of gameplay, with 3 tasks each day and 2 main puzzles
 Ar Mare is a first person horror game set in Post-War France and centered around Morgan Le Duienn, a 40 year-old ex-fisherwoman, and the Ar-Mare lighthouse of which she is the keeper. 
 
 One day, something goes wrong on this desolate rock, and Morgan is forced to keep the lighthouse by herself. She is suddenly thrust into a nightmare born out of strange, terrifying forces and her own crushing solitude.
+
+## My contribution
+
+I developed the main event system used to trigger interactions, visuals, player tasks and scary events.
+I linked a google sheet to unreal using http requests and made a parser to translate it to in game events. It made the designer's life easier, not having to go around the engine to change or check things.
+
+<img width="90%" style="object-fit: cover" src="/src/images/ArMareSheet.png">

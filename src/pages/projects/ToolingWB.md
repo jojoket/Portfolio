@@ -2,24 +2,9 @@
 layout: ../../layouts/ProjectPostLayout.astro
 title: 'Tooling at Wildblood'
 pubDate: 2024-05-01
-description: 'Project made in 3 months in the first year of Cnam Enjmin`s Master`s decree'
+description: 'The tools I made during my time at Wildblood'
 author: 'Jules Sarton'
 image:
     url: 'https://media.licdn.com/dms/image/v2/D4E3DAQGkOQOKRcPkqw/image-scale_191_1128/image-scale_191_1128/0/1699006702191/wildblood_studio_cover?e=2147483647&v=beta&t=U4MdNofVbokgPexDxe-_6r4AwMS5XE4pwkEGEb3lllc'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+    alt: 'Wildblood Logo'
 ---
-
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
-
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
