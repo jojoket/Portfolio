@@ -5,8 +5,12 @@ import Menu from "./Menu.astro";
 ---
 
 
-<div class="sidebar border-end col-md-3 col-lg-2 p-2 bg-body-tertiary">
+<div class="sidebar border-end col-md-3 col-lg-2 bg-body-tertiary">
         <div id="sidebarMenu" class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+                <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="sidebarMenuLabel">Jules Sarton</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+                </div>
                 <Navigation/>
         </div>
 </div>
